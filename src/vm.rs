@@ -65,12 +65,18 @@ impl VM {
 mod tests {
     use super::*;
 
+    fn get_test_vm() -> VM {
+        let mut test_vm = VM::new();
+        test_vm.registers[0] = 5;
+        test_vm.registers[1] = 10;
+        test_vm
+    }
+
     #[test]
     fn test_create_vm(){
         let test_vm = VM::new();
         assert_eq!(test_vm.registers[0], 0)
     }
-
 
     #[test]
     fn test_opcode_hlt() {

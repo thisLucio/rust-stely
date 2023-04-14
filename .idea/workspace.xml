@@ -9,7 +9,7 @@
   <component name="ChangeListManager">
     <list default="true" id="51f0df77-f66f-4ff2-9991-0d9b472f04bb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instruction.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/vm.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,24 @@
     &quot;org.rust.hideNoCargoProjectNotifications/home/thislucio/Compiladores e Interpratadores/Rust/stely/src/vm.rs&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cargo.Test vm::tests">
+  <component name="RunManager" selected="Cargo.Run stely">
+    <configuration name="Run stely" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="run --package stely --bin stely" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <option name="emulateTerminal" value="false" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <envs />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test instruction" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package stely --bin stely instruction" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -122,6 +139,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cargo.Run stely" />
         <item itemvalue="Cargo.Test vm::tests" />
         <item itemvalue="Cargo.Test vm::tests::test_load_opcode" />
         <item itemvalue="Cargo.Test vm" />

@@ -1,8 +1,12 @@
 use std;
 use std::io;
-use std::io::Write;
 use std::num::ParseIntError;
+use std::io::Write;
+
+use nom::types::CompleteStr;
+
 use crate::vm::VM;
+use crate::assembler::program_parsers::{Program, program};
 
 pub struct REPL {
     command_buffer: Vec<String>,
@@ -10,12 +14,14 @@ pub struct REPL {
 }
 
 impl REPL {
+
     pub fn new() -> REPL {
         REPL {
             vm: VM::new(),
             command_buffer: vec![]
         }
     }
+
 
     pub fn run(&mut self) {
         println!("Hey it's Stely! Come on, give me some bits ;)");
@@ -32,7 +38,7 @@ impl REPL {
             self.command_buffer.push(buffer.to_string());
             match buffer {
                 ".quit" => {
-                    println!("Farewell! Have a great day!");
+                    println!("Stely VM says Goodbye!");
                     std::process::exit(0);
                 },
                 ".history" => {
@@ -54,18 +60,19 @@ impl REPL {
                     println!("End of Register Listing")
                 },
                 _ => {
-                    let results = self.parse_hex(buffer);
-                    match results {
-                        Ok(bytes) => {
-                            for byte in bytes {
-                                self.vm.add_byte(byte)
-                            }
-                        },
-                        Err(_e) => {
-                            println!("STELY_ERROR::Unable to decode hex string. Please enter 4 groups of 2 hex characters.")
-                        }
-                    };
+                    let parsed_program = program(CompleteStr(buffer));
+                    if !parsed_program.is_ok() {
+                        println!("Unable to parse input");
+                        continue;
+                    }
+                    let (_, result) = parsed_program.unwrap();
+                    let bytecode = result.to_bytes();
+
+                    for byte in bytecode {
+                        self.vm.add_byte(byte);
+                    }
                     self.vm.run_once();
+
                 }
             }
 

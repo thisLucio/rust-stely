@@ -9,8 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="51f0df77-f66f-4ff2-9991-0d9b472f04bb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instruction.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/vm.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repl/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/repl/mod.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +54,9 @@
     &quot;org.rust.hideNoCargoProjectNotifications/home/thislucio/Compiladores e Interpratadores/Rust/stely/src/vm.rs&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cargo.Run stely">
-    <configuration name="Run stely" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="run --package stely --bin stely" />
+  <component name="RunManager" selected="Cargo.Test assembler::program_parsers::test_parse_program">
+    <configuration name="Test assembler::operand_parsers::test_parse_integer_operand" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely assembler::operand_parsers::test_parse_integer_operand -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -69,8 +72,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test instruction" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package stely --bin stely instruction" />
+    <configuration name="Test assembler::program_parsers::test_parse_program" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely assembler::program_parsers::test_parse_program -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -86,8 +89,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test vm" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package stely --bin stely vm" />
+    <configuration name="Test instruction_parsers::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely assembler::instruction_parsers::tests" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -103,8 +106,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test vm::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package stely --bin stely vm::tests" />
+    <configuration name="Test operand_parsers::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely assembler::operand_parsers::tests" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -120,8 +123,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test vm::tests::test_load_opcode" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package stely --bin stely vm::tests::test_load_opcode -- --exact" />
+    <configuration name="Test register_parsers::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely assembler::register_parsers::tests" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -139,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cargo.Run stely" />
-        <item itemvalue="Cargo.Test vm::tests" />
-        <item itemvalue="Cargo.Test vm::tests::test_load_opcode" />
-        <item itemvalue="Cargo.Test vm" />
-        <item itemvalue="Cargo.Test instruction" />
+        <item itemvalue="Cargo.Test assembler::program_parsers::test_parse_program" />
+        <item itemvalue="Cargo.Test instruction_parsers::tests" />
+        <item itemvalue="Cargo.Test operand_parsers::tests" />
+        <item itemvalue="Cargo.Test assembler::operand_parsers::test_parse_integer_operand" />
+        <item itemvalue="Cargo.Test register_parsers::tests" />
       </list>
     </recent_temporary>
   </component>

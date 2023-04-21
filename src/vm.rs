@@ -163,23 +163,28 @@ impl VM {
         true
     }
 
+    /// Attempts to decode the byte the VM's program counter is pointing at into an opcode
     fn decode_opcode(&mut self) -> Opcode {
         let opcode = Opcode::from(self.program[self.pc]);
         self.pc += 1;
-        return opcode;
+        opcode
     }
 
+    /// Attempts to decode the next byte into an opcode
     fn next_8_bits(&mut self) -> u8 {
         let result = self.program[self.pc];
         self.pc += 1;
-        return result;
+        result
     }
 
+    /// Grabs the next 16 bits (2 bytes)
     fn next_16_bits(&mut self) -> u16 {
-        let result = ((self.program[self.pc] as u16) << 8) | self.program[self.pc + 1] as u16;
+        let result =
+            ((u16::from(self.program[self.pc])) << 8) | u16::from(self.program[self.pc + 1]);
         self.pc += 2;
-        return result;
+        result
     }
+
 }
 
 
@@ -194,22 +199,7 @@ mod tests {
         test_vm
     }
 
-    #[test]
-    fn test_parse_instruction_form_one() {
-        let result = instruction_one(CompleteStr("load $0 #100\n"));
-        assert_eq!(
-            result,
-            Ok((
-                CompleteStr(""),
-                AssemblerInstruction {
-                    opcode: Token::Op { code: Opcode::LOAD },
-                    operand1: Some(Token::Register { reg_num: 0 }),
-                    operand2: Some(Token::Number { value: 100 }),
-                    operand3: None
-                }
-            ))
-        );
-    }
+
 
     #[test]
     fn test_create_vm() {

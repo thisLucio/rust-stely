@@ -9,6 +9,10 @@
   <component name="ChangeListManager">
     <list default="true" id="51f0df77-f66f-4ff2-9991-0d9b472f04bb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assembler/instruction_parsers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/assembler/instruction_parsers.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assembler/opcode_parsers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/assembler/opcode_parsers.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assembler/program_parsers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/assembler/program_parsers.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instruction.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/instruction.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repl/mod.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/repl/mod.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/vm.rs" afterDir="false" />
     </list>
@@ -69,8 +73,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test assembler::operand_parsers::test_parse_integer_operand" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package stely --bin stely assembler::operand_parsers::test_parse_integer_operand -- --exact" />
+    <configuration name="Test assembler::instruction_parsers::tests::test_parse_instruction_form_one" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely assembler::instruction_parsers::tests::test_parse_instruction_form_one -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -86,8 +90,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test assembler::program_parsers::test_parse_program" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package stely --bin stely assembler::program_parsers::test_parse_program -- --exact" />
+    <configuration name="Test instruction" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely instruction" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -120,8 +124,8 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test operand_parsers::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
-      <option name="command" value="test --package stely --bin stely assembler::operand_parsers::tests" />
+    <configuration name="Test opcode_parsers::tests" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package stely --bin stely assembler::opcode_parsers::tests" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
       <option name="emulateTerminal" value="false" />
       <option name="channel" value="DEFAULT" />
@@ -140,10 +144,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Cargo.Run stely" />
-        <item itemvalue="Cargo.Test assembler::program_parsers::test_parse_program" />
+        <item itemvalue="Cargo.Test instruction" />
         <item itemvalue="Cargo.Test instruction_parsers::tests" />
-        <item itemvalue="Cargo.Test operand_parsers::tests" />
-        <item itemvalue="Cargo.Test assembler::operand_parsers::test_parse_integer_operand" />
+        <item itemvalue="Cargo.Test opcode_parsers::tests" />
+        <item itemvalue="Cargo.Test assembler::instruction_parsers::tests::test_parse_instruction_form_one" />
       </list>
     </recent_temporary>
   </component>

@@ -1,5 +1,5 @@
 use nom::types::CompleteStr;
-use crate::assembler::instruction_parsers::{AssemblerInstruction, instruction_one};
+use crate::assembler::instruction_parsers::{AssemblerInstruction, instruction};
 
 
 #[derive(Debug, PartialEq)]
@@ -21,7 +21,7 @@ impl Program {
 
 named!(pub program<CompleteStr, Program>,
     do_parse!(
-        instructions: many1!(instruction_one) >>
+        instructions: many1!(instruction) >>
         (
             Program{
                 instructions: instructions

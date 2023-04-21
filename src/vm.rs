@@ -194,6 +194,22 @@ mod tests {
         test_vm
     }
 
+    #[test]
+    fn test_parse_instruction_form_one() {
+        let result = instruction_one(CompleteStr("load $0 #100\n"));
+        assert_eq!(
+            result,
+            Ok((
+                CompleteStr(""),
+                AssemblerInstruction {
+                    opcode: Token::Op { code: Opcode::LOAD },
+                    operand1: Some(Token::Register { reg_num: 0 }),
+                    operand2: Some(Token::Number { value: 100 }),
+                    operand3: None
+                }
+            ))
+        );
+    }
 
     #[test]
     fn test_create_vm() {
